@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #8fdfcb;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -3;
+  height: 100%;
+  opacity: 0.5;
+  background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);
+  background: url(https://static.radulescu.me/examples/clouds/clouds1000.png) 0
+      200px,
+    url(https://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px,
+    url(https://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px
+      250px;
+  animation: movingClouds 20s linear infinite;
+}
+@keyframes movingClouds {
+  0% {
+    background-position: 0 200px, 0 300px, 100px 250px;
+  }
+  100% {
+    background-position: 1000px 200px, 1200px 300px, 1100px 250px;
+  }
+}
+.bg-image {
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  top: 0;
+  z-index: -1;
+  background-image: url(./images/bg-image13.png);
+  background-position: bottom bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+img {
+  position: fixed;
+  object-fit: contain;
+}
+img.sun {
+  width: 350px;
+  z-index: -2;
+  height: 290px;
+  left: 45%;
+  top: 0%;
+  mix-blend-mode: overlay;
+}
+img.birds {
+  width: 120px;
+  z-index: -1;
+  height: 120px;
+  top: 50%;
+  left: 10%;
+  transform: translate(700%, -500%);
+  opacity: 0.8;
+}
+img.tree {
+  width: 600px;
+  filter: brightness(0.3);
+}
+img:nth-child(3).tree {
+  bottom: -15%;
+  left: -100px;
+}
+.secondTree {
+  bottom: -125px;
+  right: -100px;
+}
+.text {
+  display: flex;
+  gap: 200px;
+  font-size: 80px;
+  color: #fff;
+  position: absolute;
+  left: 45%;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+  top: 50%;
+  transform: translate(-45%, -50%);
+}
+.text span {
+  position: fixed;
+  left: 335px;
+}
